@@ -119,5 +119,7 @@ SALE PUTE
 
 Un bruit strident retentit et l'ordinateur passe en mode fond noir avec une image de pirate.
 
+Envoie 0.2 bitcoins a cette adresse sinon je fous ta vie en l'air, tu as 24 heures.
+Il te reste : 23 minutes et 40 secondes...
 
-**Scène 4: **
+**Scène 4: fichiers textes**
