@@ -1,0 +1,77 @@
+/* --- Bouton burger stylé --- */
+.burger {
+    width: 45px;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.bar {
+    width: 45px;
+    height: 6px;
+    background: #333;
+    border-radius: 10px;
+    transition: 0.35s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+}
+
+/* Animation burger → croix */
+.burger.open .bar:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+}
+
+.burger.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.open .bar:nth-child(3) {
+    transform: translateY(-12px) rotate(-45deg);
+}
+
+/* --- Menu latéral stylé --- */
+.menu {
+    position: fixed;
+    top: 0;
+    left: -230px;
+    width: 230px;
+    height: 100vh;
+    background: linear-gradient(135deg, #f7f7f7, #e8e8e8);
+    padding: 80px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: left 0.4s ease;
+    border-radius: 0 25px 25px 0;
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Menu affiché */
+.menu.open {
+    left: 0;
+}
+
+/* Boutons du menu */
+button {
+    padding: 15px;
+    font-size: 22px;
+    border-radius: 12px;
+    border: none;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+/* Effet joli au hover */
+button:hover {
+    background: #ffecec;
+    transform: translateX(5px);
+    box-shadow: 0 6px 14px rgba(255, 80, 80, 0.3);
+}
