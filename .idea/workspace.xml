@@ -5,13 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6624af54-d073-447d-85fa-8583bfb19721" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/buger.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/buger.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/desktop/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/desktop/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
     </list>
     <list id="d6d72dc6-84fb-4060-bb26-ab3b00570ba9" name="Changes by nidha" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,7 +46,7 @@
     "git-widget-placeholder": "main",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "/home/fadilix/Documents/dev/nuit-info/BugsDeMinuit",
+    "last_opened_file_path": "/home/fadilix/Documents/dev/nuit-info/BugsDeMinuit/public/sound_effects",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -49,6 +59,15 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/sound_effects" />
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/sounds" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
@@ -81,7 +100,7 @@
       <workItem from="1764870473609" duration="4192000" />
       <workItem from="1764876786151" duration="297000" />
       <workItem from="1764881661274" duration="338000" />
-      <workItem from="1764882013391" duration="2802000" />
+      <workItem from="1764882013391" duration="6525000" />
     </task>
     <servers />
   </component>
