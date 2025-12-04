@@ -14,7 +14,7 @@ export default function DefisPage() {
 
   if (isLoading) {
     return (
-      <div className="container py-8">
+      <div className="container mx-auto py-8 px-4">
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
             <div className="text-4xl mb-4">⏳</div>
@@ -34,7 +34,7 @@ export default function DefisPage() {
   const pointsToNextLevel = progress ? 200 - (progress.points % 200) : 200;
 
   return (
-    <div className="container py-8 space-y-8">
+    <div className="container mx-auto py-8 space-y-8 px-4">
       <div className="space-y-4">
         <Badge variant="secondary" className="text-sm">
           Module 3

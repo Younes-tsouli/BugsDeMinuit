@@ -7,7 +7,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export default function ReconditionPage() {
   return (
-    <div className="container py-8 space-y-8">
+    <div className="container mx-auto py-8 space-y-8 px-4">
       <div className="space-y-4">
         <Badge variant="secondary" className="text-sm">
           Module 1

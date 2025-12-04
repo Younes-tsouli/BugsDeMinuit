@@ -3,16 +3,13 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { Manrope } from "next/font/google"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
+  weight: ["400", "700"],
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  variable: "--font-manrope",
+})
 
 export const metadata: Metadata = {
   title: "NIRD - Numérique Inclusif, Responsable et Durable",
@@ -39,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+        className={`${manrope.className} antialiased flex flex-col min-h-screen`}
       >
         <Header />
         <main className="flex-1">

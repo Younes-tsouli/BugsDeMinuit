@@ -20,7 +20,7 @@ export default function RessourcesPage() {
   };
 
   return (
-    <div className="container py-8 space-y-8">
+    <div className="container mx-auto py-8 space-y-8 px-4">
       <div className="space-y-4">
         <Badge variant="secondary" className="text-sm">
           Module 2
