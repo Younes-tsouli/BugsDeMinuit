@@ -241,3 +241,15 @@ Pour renforcer l'aspect pédagogique de votre jeu, vous pouvez utiliser ces text
         Bloquer et faire une capture d'écran (la bonne solution).
 
         Appeler un adulte/numéro d'aide (la solution ultime).
+
+
+**Scène 9: Messages Instagram**
+
+Emilie a reçu pleins de messages de haine (une quarantaine au moins), à chaque fois c'est un compte anonyme, sans photo de profile qui envoie un seul message.
+
+Le premier message envoyé est le stalker : MARTIN KIL
+
+Le mec avait un crush sur elle alors qu'elle était en couple avec un homme, quand on remonte la conversation on le découvre. 
+
+La fille a des problèmes d'argent et vend son corps sur OF.
+Il l'apprend et 
