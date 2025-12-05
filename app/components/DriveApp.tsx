@@ -57,7 +57,7 @@ const driveFiles: DriveFile[] = [
         id: 5,
         name: 'derniere_photo_julien.jpg',
         type: 'image',
-        thumbnail: '/ressources/22-semptembre-2024.png',
+        thumbnail: '/ressources/22-septembre-2024.png',
         isBlurred: false,
         date: '20 mai 2025',
         description: 'Dernier moment ensemble'

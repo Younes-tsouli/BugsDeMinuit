@@ -17,8 +17,10 @@ export default function WarningPage({ onCorrectAnswer }: WarningPageProps) {
 
     const checkAnswer = () => {
         const value = answer.trim();
+        const values = ["15062024", "15 Juin 2024", "15/06/2024", "15-06-2024"];
+        values.map((value) => value.toLowerCase());
 
-        if (value === '01102022') {
+        if (values.includes(value.toLowerCase())) {
             onCorrectAnswer();
         } else {
             alert('Mauvaise réponse. Indice : c\'est une date.');
