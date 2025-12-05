@@ -2,10 +2,11 @@
 import React, { useState, useRef } from 'react';
 import DriveApp from './DriveApp';
 import InstagramApp from './InstagramApp';
+import OnlyFonApp from './OnlyFonApp';
 
 export default function Browser() {
     const [url, setUrl] = useState('');
-    const [currentPage, setCurrentPage] = useState<'home' | 'drive' | 'instagram'>('home');
+    const [currentPage, setCurrentPage] = useState<'home' | 'drive' | 'instagram' | 'onlyfon'>('home');
     const [searchSuggestion, setSearchSuggestion] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -19,6 +20,9 @@ export default function Browser() {
         } else if (searchTerm === 'instagrom' || searchTerm === 'martin.kil' || searchTerm.includes('instagrom') || searchTerm.includes('martin')) {
             setCurrentPage('instagram');
             setUrl('https://instagrom.com/martin.kil');
+        } else if (searchTerm === 'onlyfon' || searchTerm.includes('onlyfon') || searchTerm.includes('emily')) {
+            setCurrentPage('onlyfon');
+            setUrl('https://onlyfon.com/emily.rose_exclusive');
         }
     };
 
@@ -34,6 +38,8 @@ export default function Browser() {
             setSearchSuggestion('instagrom');
         } else if (lowerValue && 'martin.kil'.startsWith(lowerValue)) {
             setSearchSuggestion('martin.kil');
+        } else if (lowerValue && 'onlyfon'.startsWith(lowerValue)) {
+            setSearchSuggestion('onlyfon');
         } else {
             setSearchSuggestion('');
         }
@@ -60,11 +66,12 @@ export default function Browser() {
                 <div className="flex items-center px-2 pt-2 bg-gray-200">
                     <div className="bg-white px-4 py-2 rounded-t-lg border border-b-0 flex items-center space-x-2">
                         <span className="text-sm">
-                            {currentPage === 'instagram' ? '📷' : '🌐'}
+                            {currentPage === 'instagram' ? '📷' : currentPage === 'onlyfon' ? '💎' : '🌐'}
                         </span>
                         <span className="text-sm font-medium">
                             {currentPage === 'drive' ? 'Mon Drive' :
                              currentPage === 'instagram' ? 'martin.kil • Instagrom' :
+                             currentPage === 'onlyfon' ? 'OnlyFon - emily.rose_exclusive' :
                              'Nouvel onglet'}
                         </span>
                     </div>
@@ -140,6 +147,9 @@ export default function Browser() {
                                         } else if (searchSuggestion === 'instagrom' || searchSuggestion === 'martin.kil') {
                                             setUrl('https://instagrom.com/martin.kil');
                                             setCurrentPage('instagram');
+                                        } else if (searchSuggestion === 'onlyfon') {
+                                            setUrl('https://onlyfon.com/emily.rose_exclusive');
+                                            setCurrentPage('onlyfon');
                                         }
                                         setSearchSuggestion('');
                                     }}
@@ -177,22 +187,14 @@ export default function Browser() {
                             <p className="text-gray-600 mb-6">
                                 Commencez à naviguer en tapant dans la barre de recherche
                             </p>
-                            <div className="space-y-3">
-                                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-sm text-blue-800">
-                                    <p className="font-medium mb-2">💡 Astuce :</p>
-                                    <p>Essayez de rechercher &quot;drive&quot; pour accéder à vos fichiers</p>
-                                </div>
-                                <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-sm text-purple-800">
-                                    <p className="font-medium mb-2">📷 Nouveau :</p>
-                                    <p>Recherchez &quot;instagrom&quot; ou &quot;martin.kil&quot;</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 ) : currentPage === 'drive' ? (
                     <DriveApp />
                 ) : currentPage === 'instagram' ? (
                     <InstagramApp />
+                ) : currentPage === 'onlyfon' ? (
+                    <OnlyFonApp />
                 ) : null}
             </div>
         </div>

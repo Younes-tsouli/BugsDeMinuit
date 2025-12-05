@@ -11,6 +11,16 @@ const diaryPages = [
     { id: 6, title: 'Page 6', date: '3 Octobre' },
     { id: 7, title: 'Page 7', date: '12 Décembre' },
 ];
+<div className="space-y-3">
+    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-sm text-blue-800">
+        <p className="font-medium mb-2">💡 Astuce :</p>
+        <p>Essayez de rechercher &quot;drive&quot; pour accéder à vos fichiers</p>
+    </div>
+    <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-sm text-purple-800">
+        <p className="font-medium mb-2">📷 Nouveau :</p>
+        <p>Recherchez &quot;instagrom&quot; ou &quot;martin.kil&quot;</p>
+    </div>
+</div>
 
 const pageContents: { [key: number]: { title: string; content: React.ReactElement } } = {
     1: {

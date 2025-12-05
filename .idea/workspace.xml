@@ -7,6 +7,9 @@
     <list default="true" id="6624af54-d073-447d-85fa-8583bfb19721" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/Browser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Browser.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/DiaryApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/DiaryApp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/InstagramApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/InstagramApp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/htmlcodes/warning.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/htmlcodes/warning.html" afterDir="false" />
     </list>
     <list id="2e5d58f4-527b-4211-9426-6b1f1a541b9f" name="Changes by nidha" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +43,7 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "JavaScript Debug.identite.html.executor": "Run",
+    "JavaScript Debug.instagrom.html.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Notification.DisplayName-DoNotAsk-cwm.host.connection.user_joined": "Code With Me",
     "Notification.DoNotAsk-cwm.host.connection.user_joined": "true",
