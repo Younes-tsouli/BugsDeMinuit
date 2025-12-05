@@ -28,25 +28,5 @@ body {
     font-size: 180px;
     color: #ff0000;
     text-shadow: 0 0 20px #ff0000, 0 0 35px #800000;
-    animation: pulse 0.8s infinite alternate, shake 0.3s infinite;
-}
-
-/* Effet de respiration (grossit/rétrécit) */
-@keyframes pulse {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.1);
-    }
-}
-
-/* Effet tremblement */
-@keyframes shake {
-    0% { transform: translateX(-3px); }
-    25% { transform: translateX(3px); }
-    50% { transform: translateX(-3px); }
-    75% { transform: translateX(3px); }
-    100% { transform: translateX(-3px); }
 }
 

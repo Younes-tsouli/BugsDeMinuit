@@ -1,24 +1,87 @@
 'use client';
-import { useState } from 'react';
+import {useState, useEffect} from 'react';
+import JumpScare from "@/app/components/screenhack";
+import WhatsAppNotification from "@/app/components/WhatsAppNotification";
+import TerminalAnimation from "@/app/components/TerminalAnimation";
+import { useCountdown } from "@/app/context/CountdownContext";
 
 export default function Desktop() {
-    const [isAnimationActive, setIsAnimationActive] = useState(false);
+    const [showNotification, setShowNotification] = useState(false);
+    const [showTerminal, setShowTerminal] = useState(false);
+    const [showJumpscare, setShowJumpscare] = useState(false);
+    const { hours, seconds } = useCountdown();
 
-    const handleContextClick = () => {
-        setIsAnimationActive(true);
-    }
+    useEffect(() => {
+        // Check if user has already seen the notification
+        const hasSeenNotification = localStorage.getItem('hasSeenNotification');
+        const hasCompletedCycle = localStorage.getItem('hasCompletedCycle');
 
-    if (isAnimationActive) {
-        return <div>L'animation est déclenchée</div>;
+        if (!hasSeenNotification) {
+            // First time ever - show notification
+            setShowNotification(true);
+        } else if (!hasCompletedCycle) {
+            // Seen notification but hasn't completed the full cycle yet - show terminal
+            setShowTerminal(true);
+        }
+        // If hasCompletedCycle is true, stay on desktop (don't show anything)
+    }, []);
+
+    const handleNotificationClick = () => {
+        // Mark notification as seen
+        localStorage.setItem('hasSeenNotification', 'true');
+        setShowNotification(false);
+        setShowTerminal(true);
+    };
+
+    const handleTerminalComplete = () => {
+        setShowTerminal(false);
+        setShowJumpscare(true);
+    };
+
+    if (showJumpscare) {
+        return (
+            <div>
+                <JumpScare triggerAnimation={showJumpscare} />
+            </div>
+        );
     }
 
     return (
-        <div className="h-screen w-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden" onClick={handleContextClick}>
+        <div className="h-screen w-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+            {/* WhatsApp Notification */}
+            {showNotification && <WhatsAppNotification onNotificationClick={handleNotificationClick} />}
+
+            {/* Terminal Animation */}
+            {showTerminal && <TerminalAnimation onComplete={handleTerminalComplete} />}
+
             {/* Desktop Background */}
             <div className="absolute inset-0 bg-black/20"></div>
 
+            {/* Countdown Warning Banner */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                <div className="bg-black/90 backdrop-blur-md border-4 border-red-600 rounded-lg p-8 shadow-2xl">
+                    <div className="flex flex-col items-center space-y-4">
+                        <span className="text-6xl">⚠️</span>
+                        <h2 className="text-red-500 text-3xl font-bold">SYSTÈME COMPROMIS</h2>
+                        <p className="text-white text-xl text-center">
+                            Vos données ont été chiffrées
+                        </p>
+                        <div className="text-white text-lg text-center">
+                            <p>Envoyer 0.2 BTC à cette adresse:</p>
+                            <code className="bg-gray-800 px-4 py-2 rounded mt-2 block">
+                                1HckjUpRGcrrRAtFaaCAUaGjsPx9oYmLaZ
+                            </code>
+                        </div>
+                        <div className="text-red-500 text-4xl font-bold mt-4">
+                            {hours}h {seconds}s restantes
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* Taskbar */}
-            <div className="absolute bottom-0 left-0 right-0 h-12 bg-black/80 backdrop-blur-sm border-t border-gray-600 flex items-center px-4">
+            <div
+                className="absolute bottom-0 left-0 right-0 h-12 bg-black/80 backdrop-blur-sm border-t border-gray-600 flex items-center px-4">
                 {/* Start Menu Button */}
                 <button className="flex items-center space-x-2 px-3 py-1 rounded hover:bg-white/10 transition-colors">
                     <div className="w-6 h-6 bg-orange-500 rounded-sm flex items-center justify-center">
@@ -29,13 +92,16 @@ export default function Desktop() {
 
                 {/* Application Icons */}
                 <div className="flex space-x-2 ml-4">
-                    <button className="w-8 h-8 bg-orange-600 rounded-sm flex items-center justify-center hover:bg-orange-700 transition-colors">
+                    <button
+                        className="w-8 h-8 bg-orange-600 rounded-sm flex items-center justify-center hover:bg-orange-700 transition-colors">
                         <span className="text-white text-xs">🗂</span>
                     </button>
-                    <button className="w-8 h-8 bg-blue-600 rounded-sm flex items-center justify-center hover:bg-blue-700 transition-colors">
+                    <button
+                        className="w-8 h-8 bg-blue-600 rounded-sm flex items-center justify-center hover:bg-blue-700 transition-colors">
                         <span className="text-white text-xs">🌐</span>
                     </button>
-                    <button className="w-8 h-8 bg-gray-600 rounded-sm flex items-center justify-center hover:bg-gray-700 transition-colors">
+                    <button
+                        className="w-8 h-8 bg-gray-600 rounded-sm flex items-center justify-center hover:bg-gray-700 transition-colors">
                         <span className="text-white text-xs">⚙️</span>
                     </button>
                 </div>
@@ -45,13 +111,18 @@ export default function Desktop() {
                     <span className="text-white text-xs">🔊</span>
                     <span className="text-white text-xs">📶</span>
                     <span className="text-white text-xs">🔋</span>
-                    <span className="text-white text-sm">
-                        {new Date().toLocaleTimeString('en-US', {
-                            hour12: false,
-                            hour: '2-digit',
-                            minute: '2-digit'
-                        })}
-                    </span>
+                    <div className="flex flex-col items-end">
+                        <span className="text-white text-sm">
+                            {new Date().toLocaleTimeString('en-US', {
+                                hour12: false,
+                                hour: '2-digit',
+                                minute: '2-digit'
+                            })}
+                        </span>
+                        <span className="text-red-500 text-xs font-bold">
+                            ⏰ {hours}h {seconds}s
+                        </span>
+                    </div>
                 </div>
             </div>
 
@@ -93,7 +164,7 @@ export default function Desktop() {
                         </div>
                         <div className="text-gray-600 text-sm">
                             <p>System ready</p>
-                            <p className="mt-2">Click anywhere to get started...</p>
+                            <p className="mt-2">Welcome to your desktop...</p>
                         </div>
                     </div>
                 </div>

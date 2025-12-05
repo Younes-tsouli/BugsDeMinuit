@@ -25,7 +25,6 @@ Applications a afficher sur la barre latérale gauche de l'écran (à implément
 - (plus tard si on a le temps : une application Camera où on voit la gueule du détective)
 
 
-
 **Scène 2: Message douteux**
 
 Lorsque l'écran est déverouillé, un message apparait : "Va crever sale pute, je sais qui tu es..." +33 6 45 39 94 28.  
