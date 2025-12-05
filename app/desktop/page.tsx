@@ -17,7 +17,7 @@ function DesktopContent() {
     const [showDiary, setShowDiary] = useState(false);
     const [showBrowser, setShowBrowser] = useState(false);
     const [initialBrowserUrl, setInitialBrowserUrl] = useState<string>('');
-    const { hours, seconds } = useCountdown();
+    const { minutes, seconds } = useCountdown();
     const searchParams = useSearchParams();
 
     useEffect(() => {
@@ -99,7 +99,7 @@ function DesktopContent() {
                                 </code>
                             </div>
                             <div className="text-red-500 text-4xl font-bold mt-4">
-                                {hours}h {seconds}s restantes
+                                {minutes}m {seconds}s restantes
                             </div>
                         </div>
                     </div>
@@ -149,7 +149,7 @@ function DesktopContent() {
                         {/* Only show countdown after completing the cycle */}
                         {hasCompletedCycle && (
                             <span className="text-red-500 text-xs font-bold">
-                                ⏰ {hours}h {seconds}s
+                                ⏰ {minutes}m {seconds}s
                             </span>
                         )}
                     </div>

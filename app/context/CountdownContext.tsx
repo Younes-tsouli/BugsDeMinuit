@@ -11,17 +11,17 @@ interface CountdownContextType {
 const CountdownContext = createContext<CountdownContextType | null>(null);
 
 export function CountdownProvider({ children }: { children: ReactNode }) {
-    // Initialize from localStorage or default to 24 hours
+    // Initialize from localStorage or default to 30 minutes
     const [secondsRemaining, setSecondsRemaining] = useState(() => {
         if (typeof window !== 'undefined') {
             const stored = localStorage.getItem('bitcoinCountdown');
-            return stored ? parseInt(stored) : 86400;
+            return stored ? parseInt(stored) : 1800;
         }
-        return 86400;
+        return 1800;
     });
 
     useEffect(() => {
-        // Bitcoin countdown timer (24 hours)
+        // Bitcoin countdown timer (30 minutes)
         const bitcoinTimer = setInterval(() => {
             setSecondsRemaining((prev) => {
                 const newValue = prev > 0 ? prev - 1 : 0;

@@ -9,7 +9,7 @@ interface JumpScareProps {
 export default function JumpScare({triggerAnimation = false}: JumpScareProps) {
     const [show, setShow] = useState(false);   // affiche jumpscare ?
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    const { hours, seconds } = useCountdown();
+    const { minutes, seconds } = useCountdown();
 
     useEffect(() => {
         if (triggerAnimation) {
@@ -51,7 +51,7 @@ export default function JumpScare({triggerAnimation = false}: JumpScareProps) {
                             adresse bitcoin : 1HckjUpRGcrrRAtFaaCAUaGjsPx9oYmLaZ
                         </code>
                         <div className="text-red-500 font-bold text-2xl mt-4">
-                            Tu as {hours}h et {seconds} secondes
+                            Tu as {minutes}m et {seconds}s
                         </div>
                     </div>
                 </div>

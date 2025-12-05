@@ -49,7 +49,7 @@ export default function TerminalAnimation({ onComplete }: TerminalAnimationProps
     const terminalRef = useRef<HTMLDivElement>(null);
 
     // Use global countdown from context
-    const { hours, seconds } = useCountdown();
+    const { minutes, seconds } = useCountdown();
 
     const allCommands = useMemo(() => [...terminalCommands, ...insultLines, ...finalCommands], []);
 
@@ -125,7 +125,7 @@ export default function TerminalAnimation({ onComplete }: TerminalAnimationProps
                         <span className="ml-4 text-gray-400 text-sm">Terminal - root@ubuntu</span>
                     </div>
                     <div className="text-red-500 font-bold text-lg">
-                        Tu as {hours}h et {seconds} secondes pour envoyer 0.2 BTC
+                        Tu as {minutes}m et {seconds}s pour envoyer 0.2 BTC
                     </div>
                 </div>
 
