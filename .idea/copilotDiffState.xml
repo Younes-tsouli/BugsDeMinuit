@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/package.json">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/package.json" />
+              <option name="originalContent" value="{&#10;  &quot;name&quot;: &quot;main&quot;,&#10;  &quot;version&quot;: &quot;0.1.0&quot;,&#10;  &quot;private&quot;: true,&#10;  &quot;scripts&quot;: {&#10;    &quot;dev&quot;: &quot;next dev&quot;,&#10;    &quot;build&quot;: &quot;next build&quot;,&#10;    &quot;start&quot;: &quot;next start&quot;,&#10;    &quot;lint&quot;: &quot;eslint&quot;&#10;  },&#10;  &quot;dependencies&quot;: {&#10;    &quot;@radix-ui/react-avatar&quot;: &quot;^1.1.11&quot;,&#10;    &quot;@radix-ui/react-dialog&quot;: &quot;^1.1.15&quot;,&#10;    &quot;@radix-ui/react-scroll-area&quot;: &quot;^1.2.10&quot;,&#10;    &quot;class-variance-authority&quot;: &quot;^0.7.1&quot;,&#10;    &quot;lucide-react&quot;: &quot;^0.555.0&quot;,&#10;    &quot;next&quot;: &quot;16.0.7&quot;,&#10;    &quot;react&quot;: &quot;19.2.0&quot;,&#10;    &quot;react-dom&quot;: &quot;19.2.0&quot;&#10;  },&#10;  &quot;devDependencies&quot;: {&#10;    &quot;@tailwindcss/postcss&quot;: &quot;^4&quot;,&#10;    &quot;@types/node&quot;: &quot;^20&quot;,&#10;    &quot;@types/react&quot;: &quot;^19&quot;,&#10;    &quot;@types/react-dom&quot;: &quot;^19&quot;,&#10;    &quot;eslint&quot;: &quot;^9&quot;,&#10;    &quot;eslint-config-next&quot;: &quot;16.0.7&quot;,&#10;    &quot;tailwindcss&quot;: &quot;^4&quot;,&#10;    &quot;typescript&quot;: &quot;^5&quot;&#10;  }&#10;}&#10;" />
+              <option name="updatedContent" value="{&#10;  &quot;name&quot;: &quot;main&quot;,&#10;  &quot;version&quot;: &quot;0.1.0&quot;,&#10;  &quot;private&quot;: true,&#10;  &quot;scripts&quot;: {&#10;    &quot;dev&quot;: &quot;next dev&quot;,&#10;    &quot;build&quot;: &quot;next build&quot;,&#10;    &quot;start&quot;: &quot;next start&quot;,&#10;    &quot;lint&quot;: &quot;eslint&quot;&#10;  },&#10;  &quot;dependencies&quot;: {&#10;    &quot;@radix-ui/react-avatar&quot;: &quot;^1.1.11&quot;,&#10;    &quot;@radix-ui/react-dialog&quot;: &quot;^1.1.15&quot;,&#10;    &quot;@radix-ui/react-scroll-area&quot;: &quot;^1.2.10&quot;,&#10;    &quot;@radix-ui/react-separator&quot;: &quot;^1.1.10&quot;,&#10;    &quot;@radix-ui/react-slot&quot;: &quot;^1.1.1&quot;,&#10;    &quot;@radix-ui/react-tabs&quot;: &quot;^1.1.14&quot;,&#10;    &quot;class-variance-authority&quot;: &quot;^0.7.1&quot;,&#10;    &quot;clsx&quot;: &quot;^2.1.1&quot;,&#10;    &quot;lucide-react&quot;: &quot;^0.555.0&quot;,&#10;    &quot;next&quot;: &quot;16.0.7&quot;,&#10;    &quot;react&quot;: &quot;19.2.0&quot;,&#10;    &quot;react-dom&quot;: &quot;19.2.0&quot;,&#10;    &quot;tailwind-merge&quot;: &quot;^2.7.0&quot;&#10;  },&#10;  &quot;devDependencies&quot;: {&#10;    &quot;@tailwindcss/postcss&quot;: &quot;^4&quot;,&#10;    &quot;@types/node&quot;: &quot;^20&quot;,&#10;    &quot;@types/react&quot;: &quot;^19&quot;,&#10;    &quot;@types/react-dom&quot;: &quot;^19&quot;,&#10;    &quot;eslint&quot;: &quot;^9&quot;,&#10;    &quot;eslint-config-next&quot;: &quot;16.0.7&quot;,&#10;    &quot;tailwindcss&quot;: &quot;^4&quot;,&#10;    &quot;typescript&quot;: &quot;^5&quot;&#10;  }&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
