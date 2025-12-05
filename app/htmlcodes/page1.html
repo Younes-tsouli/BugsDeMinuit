@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page 1 - Journal Papyrus Réaliste</title>
+
+    <style>
+        /* Base pour le Corps (Body) */
+        body {
+            /* Couleur de fond ajustée pour une ambiance ancienne */
+            margin: 0;
+            padding: 0;
+            background: #b5a487;
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+            font-family: "Georgia", serif;
+        }
+
+        /* Style du Papier Papyrus - Rendu Réaliste */
+        .paper {
+            width: 380px;
+            min-height: 90vh;
+
+            /* --- TEXTURE PAPYRUS RÉALISTE (SVG NOISE AVANCÉ) --- */
+            background-color: #f5e4c4; /* Couleur de base claire */
+
+            /* Cette URL de données SVG utilise feTurbulence et feDiffuseLighting
+               pour créer un motif de fibre réaliste et des ombres douces. */
+            background-image:
+                    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.03 0.05' numOctaves='3' result='noise'/%3E%3CfeDiffuseLighting in='noise' lighting-color='%23d9c088' surfaceScale='2'%3E%3CfeDistantLight azimuth='45' elevation='60'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.7'/%3E%3C/svg%3E");
+
+            /* Ombre douce pour vieillir les bords du papier (Vignette) */
+            box-shadow: inset 0 0 100px rgba(88, 56, 30, 0.25), 0 8px 30px rgba(0,0,0,0.4);
+
+            /* ----------------------------------------------------- */
+
+            background-size: cover;
+            background-position: center;
+            padding: 25px;
+            border-radius: 4px;
+            position: relative;
+            color: #2b1d0e; /* Couleur de texte "encre" foncée */
+        }
+
+        /* Bouton retour */
+        .back-btn {
+            width: 40px;
+            height: 40px;
+            background: #e3d3b0; /* Couleur coordonnée */
+            border-radius: 50%;
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .back-btn:hover { transform: scale(1.1); }
+
+        .back-btn::before {
+            content: "";
+            border-style: solid;
+            border-width: 8px 14px 8px 0;
+            border-color: transparent #3e2723 transparent transparent;
+            margin-right: 3px;
+        }
+
+        /* Bouton audio */
+        .audio-btn {
+            width: 40px;
+            height: 40px;
+            background: #e3d3b0; /* Couleur coordonnée */
+            border-radius: 50%;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .audio-btn:hover { transform: scale(1.1); }
+
+        .audio-btn::before {
+            content: "";
+            border-style: solid;
+            border-width: 8px 0 8px 14px;
+            border-color: transparent transparent transparent #3e2723;
+            margin-left: 3px;
+        }
+
+        .page-header {
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* LIGNES SOUS LE TEXTE - REMOVED the repeating gradient lines
+           to match the request for an actual papyrus appearance. */
+        .diary-text {
+            font-size: 17px;
+            line-height: 1.8;
+            white-space: pre-line;
+            padding: 10px 5px;
+            /* Lignes enlevées ici */
+        }
+
+        .highlight-red {
+            color: #9c3030;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="paper">
+
+    <a class="back-btn" href="diary.html"></a>
+
+    <div class="audio-btn"></div>
+
+    <div class="page-header">
+        Page 1 — Aug 16th, 2022
+    </div>
+
+    <div class="diary-text">
+        I don't know, but something just doesn't feel right today.
+        Lately, I have started spending a lot of time <span class="highlight-red">alone</span>.
+        I don't know how I'm supposed to fix this.
+
+        Maybe it's the feeling of being alone, or my love for the old Elm.
+        I still remember the first day we went there.
+
+        I'm glad Ken showed me this place. The smell of nature, the lake water, the cold air…
+        It was calming.
+
+        I remember the time I was sitting under the shadow. I felt like… that was <span class="highlight-red">my spot</span>.
+
+        Some people say that we’re too old to go there at night. I can't blame them though.
+
+        Enough with the talk of fear. I haven't dreamed anything weird today.
+        I think I'm safe for the moment…
+
+        Until I saw <span class="highlight-red">that thing</span> again.
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -3,12 +3,17 @@ import {useState, useEffect} from 'react';
 import JumpScare from "@/app/components/screenhack";
 import WhatsAppNotification from "@/app/components/WhatsAppNotification";
 import TerminalAnimation from "@/app/components/TerminalAnimation";
+import Window from "@/app/components/Window";
+import DiaryApp from "@/app/components/DiaryApp";
+import Browser from "@/app/components/Browser";
 import { useCountdown } from "@/app/context/CountdownContext";
 
 export default function Desktop() {
     const [showNotification, setShowNotification] = useState(false);
     const [showTerminal, setShowTerminal] = useState(false);
     const [showJumpscare, setShowJumpscare] = useState(false);
+    const [showDiary, setShowDiary] = useState(false);
+    const [showBrowser, setShowBrowser] = useState(false);
     const { hours, seconds } = useCountdown();
 
     useEffect(() => {
@@ -16,14 +21,17 @@ export default function Desktop() {
         const hasSeenNotification = localStorage.getItem('hasSeenNotification');
         const hasCompletedCycle = localStorage.getItem('hasCompletedCycle');
 
-        if (!hasSeenNotification) {
-            // First time ever - show notification
-            setShowNotification(true);
-        } else if (!hasCompletedCycle) {
-            // Seen notification but hasn't completed the full cycle yet - show terminal
-            setShowTerminal(true);
-        }
-        // If hasCompletedCycle is true, stay on desktop (don't show anything)
+        // Use setTimeout to avoid ESLint warning about synchronous setState in effect
+        setTimeout(() => {
+            if (!hasSeenNotification) {
+                // First time ever - show notification
+                setShowNotification(true);
+            } else if (!hasCompletedCycle) {
+                // Seen notification but hasn't completed the full cycle yet - show terminal
+                setShowTerminal(true);
+            }
+            // If hasCompletedCycle is true, stay on desktop (don't show anything)
+        }, 0);
     }, []);
 
     const handleNotificationClick = () => {
@@ -46,6 +54,9 @@ export default function Desktop() {
         );
     }
 
+    // Check if user has completed the cycle to show the warning
+    const hasCompletedCycle = typeof window !== 'undefined' && localStorage.getItem('hasCompletedCycle') === 'true';
+
     return (
         <div className="h-screen w-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden">
             {/* WhatsApp Notification */}
@@ -57,27 +68,29 @@ export default function Desktop() {
             {/* Desktop Background */}
             <div className="absolute inset-0 bg-black/20"></div>
 
-            {/* Countdown Warning Banner */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                <div className="bg-black/90 backdrop-blur-md border-4 border-red-600 rounded-lg p-8 shadow-2xl">
-                    <div className="flex flex-col items-center space-y-4">
-                        <span className="text-6xl">⚠️</span>
-                        <h2 className="text-red-500 text-3xl font-bold">SYSTÈME COMPROMIS</h2>
-                        <p className="text-white text-xl text-center">
-                            Vos données ont été chiffrées
-                        </p>
-                        <div className="text-white text-lg text-center">
-                            <p>Envoyer 0.2 BTC à cette adresse:</p>
-                            <code className="bg-gray-800 px-4 py-2 rounded mt-2 block">
-                                1HckjUpRGcrrRAtFaaCAUaGjsPx9oYmLaZ
-                            </code>
-                        </div>
-                        <div className="text-red-500 text-4xl font-bold mt-4">
-                            {hours}h {seconds}s restantes
+            {/* Countdown Warning Banner - Only show after completing the workflow */}
+            {hasCompletedCycle && (
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    <div className="bg-black/90 backdrop-blur-md border-4 border-red-600 rounded-lg p-8 shadow-2xl">
+                        <div className="flex flex-col items-center space-y-4">
+                            <span className="text-6xl">⚠️</span>
+                            <h2 className="text-red-500 text-3xl font-bold">SYSTÈME COMPROMIS</h2>
+                            <p className="text-white text-xl text-center">
+                                Vos données ont été chiffrées
+                            </p>
+                            <div className="text-white text-lg text-center">
+                                <p>Envoyer 0.2 BTC à cette adresse:</p>
+                                <code className="bg-gray-800 px-4 py-2 rounded mt-2 block">
+                                    1HckjUpRGcrrRAtFaaCAUaGjsPx9oYmLaZ
+                                </code>
+                            </div>
+                            <div className="text-red-500 text-4xl font-bold mt-4">
+                                {hours}h {seconds}s restantes
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            )}
 
             {/* Taskbar */}
             <div
@@ -119,9 +132,12 @@ export default function Desktop() {
                                 minute: '2-digit'
                             })}
                         </span>
-                        <span className="text-red-500 text-xs font-bold">
-                            ⏰ {hours}h {seconds}s
-                        </span>
+                        {/* Only show countdown after completing the cycle */}
+                        {hasCompletedCycle && (
+                            <span className="text-red-500 text-xs font-bold">
+                                ⏰ {hours}h {seconds}s
+                            </span>
+                        )}
                     </div>
                 </div>
             </div>
@@ -148,6 +164,27 @@ export default function Desktop() {
                     </div>
                     <span className="text-white text-xs text-center">Trash</span>
                 </div>
+                <div
+                    className="flex flex-col items-center space-y-1 cursor-pointer hover:bg-white/10 p-2 rounded"
+                    onClick={() => setShowDiary(true)}
+                    onDoubleClick={() => setShowDiary(true)}
+                >
+                    <div className="w-12 h-12 bg-purple-600 rounded-sm flex items-center justify-center">
+                        <span className="text-white text-lg">📔</span>
+                    </div>
+                    <span className="text-white text-xs text-center">Journal</span>
+                </div>
+
+                <div
+                    className="flex flex-col items-center space-y-1 cursor-pointer hover:bg-white/10 p-2 rounded"
+                    onClick={() => setShowBrowser(true)}
+                    onDoubleClick={() => setShowBrowser(true)}
+                >
+                    <div className="w-12 h-12 bg-blue-600 rounded-sm flex items-center justify-center">
+                        <span className="text-white text-lg">🌐</span>
+                    </div>
+                    <span className="text-white text-xs text-center">Navigateur</span>
+                </div>
             </div>
 
             {/* Window Animation */}
@@ -169,6 +206,34 @@ export default function Desktop() {
                     </div>
                 </div>
             </div>
+
+            {/* Diary Window */}
+            {showDiary && (
+                <Window
+                    title="Journal Intime"
+                    onClose={() => setShowDiary(false)}
+                    width={900}
+                    height={700}
+                    initialX={200}
+                    initialY={50}
+                >
+                    <DiaryApp />
+                </Window>
+            )}
+
+            {/* Browser Window */}
+            {showBrowser && (
+                <Window
+                    title="Navigateur Web"
+                    onClose={() => setShowBrowser(false)}
+                    width={1100}
+                    height={750}
+                    initialX={100}
+                    initialY={40}
+                >
+                    <Browser />
+                </Window>
+            )}
         </div>
     );
 }

