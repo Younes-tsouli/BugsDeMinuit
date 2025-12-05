@@ -12,8 +12,10 @@ Votre objectif est de fouiller le système d'exploitation pour comprendre la vie
 
 ## Crédits
 
-Jeu créé par [Noms des créateurs].
+- Developpement : Fadilou MOROU, Nidhal SOUMRI
+- Scénario : Timeo CANTO-RINGELSTEIN, Nishal SOUMRI
 
+Remerciments : Younes TSOULI (pour avoir participé au début du projet), Wassef ZAIER (une aide considérable pour le scénario), Jawel BRIKI (un soutient émotionnel sans pareil), Lucien Laboulais (pour avoir tester notre jeu :) ).
 ### Aide / Spoilers
 
 Si vous êtes bloqué dans l'enquête, voici quelques pistes pour avancer. Ne lisez ce qui suit que si nécessaire.
